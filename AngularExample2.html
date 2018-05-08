@@ -1,0 +1,20 @@
+<html>
+<!DOCTYPE html>
+
+<form name="Form1">
+Number 1:<input type="text" name="T1" ><BR>
+Number 2:<input type="text" name="T2" ><BR>
+<input type="button" value="+" name="B" onclick="add()"><BR>
+Result: <input type="text" name="T3" ></BR>
+</form>
+
+<script>
+function add(){
+var no1=parseInt(window.document.Form1.T1.value);
+var no2=parseInt(window.document.Form1.T2.value);
+Result=no1+no2;
+window.document.Form1.T3.value=Result;
+}
+</script>
+
+</html>
