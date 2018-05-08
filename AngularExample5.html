@@ -1,0 +1,27 @@
+<html>
+ 
+<body onmousemove="xyz()">
+<span id="red" style="Position:absolute;top:10;left:10;font-size: 50; color: red" onmouseenter="changeColour(id)" onmouseleave="changeColour('black')"> Red </span> 
+<span id="blue" style="Position:absolute;top:500;left:10;font-size: 50; color:blue" onmouseenter="changeColour(id)" onmouseleave="changeColour('black')"> Blue </span> 
+<span id="yellow" style="Position:absolute;top:500;left:500;font-size: 50; color: yellow" onmouseenter="changeColour(id)"onmouseleave="changeColour('black')"> Yellow </span>
+<span id="green" style="Position:absolute;top:10;left:500;font-size: 50; color:green" onmouseenter="changeColour(id)" onmouseleave="changeColour('black')"> Green </span>
+<span id="QA" style="Position:absolute;top:250;left:250;font-size: 50;color: black "> QA  </span>
+</body>  
+    
+
+<script>
+function xyz(){
+    document.getElementById("QA").style.top=window.event.clientY;
+    document.getElementById("QA").style.left=window.event.clientX;
+}
+function changeColour(id){
+    document.getElementById("QA").style.color=id;
+}
+</script>    
+    
+
+
+
+
+</html>
+
