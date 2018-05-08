@@ -22,7 +22,7 @@ Input 2: <input type="text" name="T2" ><BR><BR>
 <form name="Form1">
 
 Input 1: <input type="text" name="T1" ><BR>
-Input 2: <input type="text" name="T2" ><BR><BR>
+Input 2: <input type   ="text" name="T2" ><BR><BR>
 
 </form>
 <form name="Form1">
@@ -37,12 +37,12 @@ Input 2: <input type="text" name="T2" ><BR><BR>
     
 <script>
 function findEmpty(){
-    loop1:
+    
     for (var form of window.document.forms){
        for (var element of form){
             if (element.value=="" && element.type=="text"){
                 element.focus();
-                break loop1;
+                return;
             }
         }
     }
