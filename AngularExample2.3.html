@@ -1,0 +1,38 @@
+<html>
+<!DOCTYPE html>
+
+<form name="Form1">
+Number 1:<input type="text" name="T1"  ><BR>
+Number 2:<input type="text" name="T2" ><BR>
+<input type="button" value="+" name="B" onclick="add()"><BR>
+Result: <input type="text" name="T3" ></BR>
+</form>
+
+    
+<script>
+function add(){
+    
+var myform=window.document.forms[0];
+    
+var no1=(myform.elements[0].value);
+var no2=(myform.elements[1].value);
+    
+if (no1==""){
+    window.alert("First Number is missing");
+    myform.T1.focus();
+}
+else if(no2==""){
+    window.alert("Second Number is missing");
+    myform.T2.focus();
+}
+else
+    Result=parseInt(no1)+parseInt(no2);
+    myform.T3.value=Result;
+}
+
+
+
+</script>
+
+
+</html>

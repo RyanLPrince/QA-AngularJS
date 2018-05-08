@@ -1,0 +1,51 @@
+<html>
+<!DOCTYPE html>
+
+<form name="Form1">
+<input type="button" ><BR>
+Input 1: <input type="text" name="T1" ><BR>
+Input 2: <input type="text" name="T2" ><BR><BR>
+
+</form>
+<form name="Form1">
+
+Input 1: <input type="text" name="T1" ><BR>
+Input 2: <input type="text" name="T2" ><BR><BR>
+
+</form>
+<form name="Form1">
+
+Input 1: <input type="text" name="T1" ><BR>
+Input 2: <input type="text" name="T2" ><BR><BR>
+
+</form>
+<form name="Form1">
+
+Input 1: <input type="text" name="T1" ><BR>
+Input 2: <input type="text" name="T2" ><BR><BR>
+
+</form>
+<form name="Form1">
+
+Input 1: <input type="text" name="T1" ><BR>
+Input 2: <input type="text" name="T2" ><BR><BR>
+
+</form>
+
+    
+<input type="button" value="Find Empty" name="B" onclick="findEmpty()"><BR>
+    
+<script>
+function findEmpty(){
+    loop1:
+    for (var form of window.document.forms){
+       for (var element of form){
+            if (element.value=="" && element.type=="text"){
+                element.focus();
+                break loop1;
+            }
+        }
+    }
+}
+</script>
+</html>
