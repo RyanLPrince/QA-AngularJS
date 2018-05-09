@@ -1,0 +1,35 @@
+<html>
+
+<Body onmousemove="xyz()" onkeydown="changeSize()">  
+    <input type="text" id="mouseText" name="mouseText" value="QA Consulting " > 
+    <span id="QA" style="position:absolute; font-size:30"> QA Consulting </span>   
+</Body> 
+        
+<script>
+function xyz(){
+    if (document.getElementById("mouseText").value!=""){
+        document.getElementById("QA").innerHTML=document.getElementById("mouseText").value;
+        }
+    document.getElementById("QA").style.top=window.event.clientY+1;
+    document.getElementById("QA").style.left=window.event.clientX+1;
+}
+    
+function changeSize(){
+    if (event.ctrlKey){
+         document.getElementById("QA").style.fontSize=parseInt(document.getElementById("QA").style.fontSize)+10;
+        //window.alert((document.getElementById("QA").style.fontSize))
+    }
+    if(event.altKey && parseInt(document.getElementById("QA").style.fontSize)>10){
+        document.getElementById("QA").style.fontSize=parseInt(document.getElementById("QA").style.fontSize)-10;
+    }
+}
+   
+
+</script>
+
+
+    
+    
+
+</html>
+
