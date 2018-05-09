@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link href="AngularExample6.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+<span id="countries" onmouseover=show(countries) ><B>COUNTRIES</B><BR>
+<span id="m1" style="display:none" onmouseleave=hide(m1)>
+    <span id="c1" ><a href="https://en.wikipedia.org/wiki/United_Kingdom">UK</a>
+    </span><BR>
+    <span id="c2"><a href="https://en.wikipedia.org/wiki/Saint_Lucia">ST.LUCIA</a>
+    </span><BR>
+    <span id="c3"><a href="https://en.wikipedia.org/wiki/Jamaica">JAMAICA</a>
+    </span><BR>
+    <span id="c4"><a href="https://en.wikipedia.org/wiki/India">INDIA</a>
+    </span><BR><BR>
+</span>
+</span>   
+
+<span id="sports" onmouseover=show(sports)><B>SPORTS</B><BR>
+<span id="m2" style="display:none" onmouseleave=hide(m2)>
+    <span id="s1"><a href="https://en.wikipedia.org/wiki/football">FOOTBALL</a>
+    </span><BR>
+    <span id="s2"><a href="https://en.wikipedia.org/wiki/Cricket">CRICKET</a>
+    </span><BR>
+    <span id="s3"><a href="https://en.wikipedia.org/wiki/Sprint_(running)">SPRINTING</a>
+    </span><BR>
+    <span id="s4"><a href="https://en.wikipedia.org/wiki/Kabaddi">KABADDI</a>
+    </span>
+</span>
+</span>
+    
+</html>
+
+<script>
+    function show(spans){
+        for (span of spans.getElementsByTagName("span")){
+                span.style.display="block";
+             }
+        
+
+    }
+    function hide(spans){
+        for (span of spans.getElementsByTagName("span")){
+                span.style.display="none";
+             }
+
+    }
+
+</script>

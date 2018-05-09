@@ -1,0 +1,28 @@
+<html>
+
+<form action="Test.html" onsubmit="return chk()">
+    Name <input type="Text" name="N" id="N">
+    Password <input type="password" name="P" id="P">
+    <input type="submit">
+    
+</form>
+    
+
+    
+    
+<script>
+    function chk(){
+        name = document.getElementById("N").value
+        console.log(name)
+        if(name==""){
+            window.alert("Name missing")
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+    
+    
+</html>
