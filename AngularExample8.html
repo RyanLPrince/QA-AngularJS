@@ -1,0 +1,21 @@
+<html>
+
+<input type="text" id="input" onkeypress="validate(this)"> 
+
+
+
+<script>
+    function validate(string){
+        // string.value=string.value.replace(/[^a-zA-Z\d\s]/,""); 
+        
+        if(!((event.keyCode>=65 && event.keyCode<=97) || (event.keyCode>=97 && event.keyCode<=122) ||(event.keyCode>=48 && event.keyCode<=57))){
+        //if(/[^a-zA-Z\d\s]/.test(string.value))
+          
+            window.event.preventDefault();
+            
+        }
+}
+        
+</script>
+    
+</html>
