@@ -1,0 +1,51 @@
+<html ng-app="xyz">
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- online src-->
+      <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
+</head>
+    
+    <script>
+        var c=angular.module("xyz",[]);
+        
+        var people=function($scope){
+            $scope.data=[
+                {person:"Ryan",likes:0,dislikes:0},
+                {person:"Chad",likes:0,dislikes:0},  
+                {person:"Nabeel",likes:0,dislikes:0},
+            ];
+            $scope.likes=function(record){
+                record.likes++;
+            }
+              $scope.dislikes=function(record){
+                record.dislikes++;
+            }
+        }
+        c.controller("ctrl1",people);
+        
+        
+    </script>
+    
+    <table ng-controller="ctrl1">
+        <tr>
+            <td>Person</td>
+            <td>Likes</td>
+            <td>Dislikes</td>
+            <td></td>
+            <td>Rating</td>
+        </tr>
+        <tr ng-repeat="person in data">
+            <td>{{person.person}}</td>
+            <td>{{person.likes}}</td>
+            <td>{{person.dislikes}}</td>
+            <td><input type="button" value="Likes" ng-click="likes(person)"  ><input type="button" value="Dislikes" ng-click="dislikes(person)"  ></td>
+            <td>
+                <div ng-if="person.likes==person.dislikes"> Equal</div>
+                <div ng-if="person.likes>person.dislikes"> More Likes</div>
+                <div ng-if="person.likes<person.dislikes"> More Dislikes</div>
+            </td>
+        </tr>
+    </table>
+     
+    
+   
+</html>

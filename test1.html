@@ -1,0 +1,37 @@
+
+
+<html ng-app="xyz">
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- online src-->
+      <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
+    </head>
+
+<script>
+ var m=angular.module("xyz",[]);
+    
+  var n1=function($scope){
+          $scope.records=[
+            {regno:21, name: "Ryan",marks:151},
+            {regno:56, name:"Chad", marks:120},
+            {regno:75, name:"Nabeel", marks:0}
+        ];
+    }
+    m.controller("ctrl3",n1);
+</script>
+{{2+3}}
+   <div ng-controller="ctrl3">
+        {{2+3}} .... {{T}}
+        <table>
+            <tr>
+                <td>Registation Number|</td>
+                <td>Name|</td>
+                <td>Marks</td>
+            </tr>
+            <tr ng-repeat="rec in records">
+                <td>{{rec.regno}}a</td>
+                <td>{{rec.name}}</td>
+                <td>{{rec.marks}}</td>
+            </tr>
+        </table>  
+    </div>
+</html>

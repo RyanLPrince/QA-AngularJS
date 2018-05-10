@@ -1,0 +1,77 @@
+<html ng-app="xyz">
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- online src-->
+      <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
+    </head>
+
+<script>
+    var m=angular.module("xyz",[]);
+    m.controller("ctrl1",function ($scope){
+        $scope.name="Ryan";        
+    });
+    
+    var f=function($scope){
+        $scope.Regno="s1";
+        $scope.name="Peter";
+        $scope.address="London";
+        $scope.greeting=function(){
+                                    return "Hello " + $scope.name 
+                            }
+        $scope.add=function(a,b){
+                                    return a+b;
+                                }
+    }
+    
+    m.controller ("ctrl2",f);
+    
+    var n1=function($scope){
+          $scope.records=[
+            {regno:21, name: "Ryan",marks:150},
+            {regno:56, name:"Chad", marks:120},
+            {regno:75, name:"Nabeel", marks:0}
+        ];
+    }
+    m.controller("ctrl3",n1);
+    
+</script>  
+    
+    <div ng-controller="ctrl1">{{name}}<BR>
+        <input type="text" ng-model="name"><!--assign text box value to name in f-->
+    </div>
+        
+    <div ng-controller="ctrl2">{{Regno}} <BR><input type="text" ng-model="Regno"><BR>
+                               {{name}}<BR><input type="text" ng-model="name"><BR>
+                               {{address}}<BR><input type="text" ng-model="address"><BR>
+                               {{greeting()}}<BR>
+                               {{add(1,2)}}<BR><BR><BR>
+    
+    </div>
+    
+    <div ng-controller="ctrl3">
+        
+        <table>
+            <tr>
+                <td>Registation Number|</td>
+                <td>Name|</td>
+                <td>Marks</td>
+                <td>Percentage</td>
+                <td>Pass/Fail</td>
+            </tr>
+            <tr ng-repeat="rec in records">
+                <td>{{rec.regno}}</td>
+                <td>{{rec.name}}</td>
+                <td>{{rec.marks}}</td>
+                <td>{{rec.marks*1/1.5}}%</td>
+                <td>
+                    <b ng-if="rec.marks<60">
+                        Fail</b>
+                    <b ng-if="rec.marks>=60">Pass</b>
+                </td>
+            </tr>
+        </table>  
+    </div>
+    
+    
+    
+        
+</html>
