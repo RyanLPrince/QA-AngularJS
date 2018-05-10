@@ -1,0 +1,49 @@
+<html ng-app="StudentRecords">
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- online src-->
+      <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
+</head>
+ 
+    <script>
+        var a=angular.module("StudentRecords",[]);
+        
+        var student=function($scope){
+            $scope.record=[
+                {Regno:1, Name:"Ryan", Address:"UK",marks:100},
+                {Regno:2, Name:"McGregor", Address:"Scotland",marks:90},
+                {Regno:3, Name:"Stainbank", Address:"Germany",marks:20},
+            ];
+  
+            
+        }
+        a.controller("ctrl1",student);
+    </script>
+    
+    <table ng-controller="ctrl1"> 
+        <tr>
+            <td> </td>  
+            <td><input type="text" ng-model="search.Name">
+                </td>  
+            <td><input type="text" ng-model="search.Address">
+                </td>  
+            <td><input type="text" ng-model="search.marks">
+                </td>  
+        </tr>
+        
+        <tr>
+            
+            <td>RegNo</td>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Marks</td>
+        </tr>
+        <tr ng-repeat=" rec in record| filter:search:match" >
+            <td>{{rec.Regno}}</td>
+            <td >{{rec.Name}}</td>
+            <td >{{rec.Address}}</td>
+            <td >{{rec.marks}}</td>
+                              
+        </tr>
+    </table>
+<input type="checkbox" ng-model="match">
+</html>

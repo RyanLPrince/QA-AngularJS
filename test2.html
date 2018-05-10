@@ -4,7 +4,41 @@
       <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
     </head>
 
-{{2+33}}
+<script>
+    var m=angular.module("xyz",[]);
+    m.controller("ctrl1",function ($scope){
+        $scope.name="Ryan";        
+    });
+    
+    var f=function($scope){
+        $scope.Regno="s1";
+        $scope.name="Peter";
+        $scope.address="London";
+        $scope.greeting=function(){
+                                    return "Hello " + $scope.name 
+                            }
+        $scope.add=function(a,b){
+                                    return a+b;
+                                }
+    }
+    
+    m.controller ("ctrl2",f);
+    
+    
+</script>  
+    
+    <div ng-controller="ctrl1">{{name}}<BR>
+        <input type="text" ng-model="name"><!--assign text box value to name in f-->
+    </div>
+        
+    <div ng-controller="ctrl2">{{Regno}} <BR><input type="text" ng-model="Regno"><BR>
+                               {{name}}<BR><input type="text" ng-model="name"><BR>
+                               {{address}}<BR><input type="text" ng-model="address"><BR>
+                               {{greeting()}}<BR>
+                               {{add(12,10)}}<BR><BR><BR>
+        {{1000+2000}}
+    
+    </div>
     
   
 </html>

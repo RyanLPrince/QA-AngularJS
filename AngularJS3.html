@@ -1,0 +1,53 @@
+<html ng-app="Catalogue">
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- online src-->
+      <script src="C:\Users\Admin\Desktop\Angular\Angular.js"></script> <!-- local src-->
+</head>
+ 
+    <script>
+        var c=angular.module("Catalogue",[]);
+        
+        var items=function($scope){
+            $scope.data=[
+                {SNo:1,id:75,product:"Coke",Qty:56,price:1.7},
+                {SNo:2,id:92,product:"7up",Qty:42,price:1.92},
+                {SNo:3,id:195,product:"Fanta",Qty:93,price:1.92},
+            ];
+            $scope.field="id";
+            $scope.order=true;
+            $scope.abc=345;
+            
+        }
+        c.controller("ctrl1",items);
+    </script>
+    
+   
+   <div ng-controller="ctrl1">
+       {{order}}
+    <table> 
+         
+        <img src="up.png" ng-show="order"></img>
+       <img src="down.png" ng-show="!order"></img>
+       
+
+        <tr>
+            
+            <td >S.No</td>
+            <td ng-click="field='id';order=!order">ID</td>
+            <td ng-click="field='product';order=!order">Product</td>
+            <td ng-click="field='Qty';order=!order">Quantity</td>
+            <td ng-click="field='price';order=!order">Price</td>
+        </tr>
+        
+        <tr ng-repeat="item in data|orderBy:field:order" >
+        
+            <td>{{item.SNo}}   </td>
+            <td >{{item.id}}</td>
+            <td >{{item.product}}</td>
+            <td >{{item.Qty}}</td>
+            <td >{{item.price}}</td>
+                                  
+        </tr>
+    </table>
+    </div>
+</html>
